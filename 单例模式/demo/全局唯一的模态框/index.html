@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <button id="open">打开弹窗</button>
+    <button id="close">关闭弹窗</button>
+  </div>
+  <script>
+    const Modal = (function () {
+      let modal;
+      return function() {
+        if (!modal) {
+          modal = document.createElement('div');
+          modal.innerText = '这是全局唯一的modal';
+          modal.style.display = 'none';
+          document.body.appendChild(modal);
+        }
+
+        return modal;
+      }
+      
+    })()
+
+    document.getElementById("open").addEventListener('click', function() {
+      let modal = new Modal();
+      modal.style.display = 'block'
+    })
+
+    document.getElementById("close").addEventListener('click', function() {
+      let modal = new Modal();
+      modal.style.display = 'none'
+    })
+  </script>
+</body>
+</html>
