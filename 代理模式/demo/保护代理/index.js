@@ -39,3 +39,6 @@ proxyPerson.sex = 1;
 
 console.log('proxyPerson', proxyPerson);
 console.log('person', person);
+
+
+// 参考：https://juejin.cn/book/6844733790204461070/section/6844733790271569934?enter_from=course_center&utm_source=course_center
